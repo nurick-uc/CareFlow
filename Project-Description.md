@@ -22,7 +22,7 @@ CareFlow brings hospital operational data into one place and uses machine learni
 
 ## Data
 
-Development starts with a Python-generated synthetic dataset (daily admissions, discharges, and occupancy for Emergency, Medical-Surgical, and ICU departments). Public sources such as CMS data and credentialed sources such as MIMIC-IV will be investigated in parallel. No real patient data is used without the required training and data use agreements.
+CareFlow uses a Python-generated synthetic dataset (daily admissions, discharges, and occupancy for Emergency, Medical-Surgical, and ICU departments). Whether to add any real-world dataset will be decided with our advisor after the synthetic version works. No real patient data is used without the required training and data use agreements.
 
 ## Research Question
 
