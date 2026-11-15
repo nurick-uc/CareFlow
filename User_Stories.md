@@ -1,6 +1,5 @@
 # CareFlow: Hospital Operations and Resource Planning Platform
 
-**Assignment:** Assignment 4, Part 1: User Stories and Use Cases
 
 **Team Members:**
 - Vaishnavi Koduri
