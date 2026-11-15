@@ -1,5 +1,6 @@
 # CareFlow: Hospital Operations and Resource Planning Platform
 
+**Assignment:** Assignment 4, Part 1: User Stories and Use Cases
 
 **Team Members:**
 - Vaishnavi Koduri
@@ -7,17 +8,35 @@
 
 # 1. Stakeholder Map
 
-CareFlow is designed to help hospitals forecast patient demand, monitor bed occupancy, estimate staffing needs, and support hospital resource planning.
+CareFlow is designed to help hospitals forecast patient demand, monitor bed occupancy, estimate staffing requirements, and support hospital resource planning.
 
-The following stakeholders may use, support, or be affected by the system.
+The project considers people who directly use the system, people who support its operation, and people whose needs might otherwise be overlooked.
 
-| Category | Stakeholder | Main Need |
-|---|---|---|
-| Primary | Hospital Administrator | Predict hospital demand and plan resources. |
-| Primary | Bed Manager | Monitor bed availability and anticipate capacity problems. |
-| Primary | Charge Nurse | Identify possible staffing shortages. |
-| Secondary | Hospital Data Manager | Provide accurate operational data. |
-| Hidden | Hospital Staff Member Using a Screen Reader | Access operational information using assistive technology. |
+### Primary Stakeholders
+
+**1. Hospital Administrator**
+
+Main Need: Predict hospital demand and plan hospital resources before capacity problems occur.
+
+**2. Bed Manager**
+
+Main Need: Monitor bed availability and anticipate capacity problems across hospital departments.
+
+**3. Charge Nurse**
+
+Main Need: Identify possible staffing shortages and communicate resource requirements.
+
+### Secondary Stakeholder
+
+**4. Hospital Data Manager**
+
+Main Need: Provide accurate and properly formatted operational data for generating forecasts and reports.
+
+### Hidden Stakeholder
+
+**5. Hospital Staff Member Using a Screen Reader**
+
+Main Need: Access operational reports and forecasts using assistive technology.
 
 # 2. User Stories
 
@@ -59,7 +78,7 @@ As a hospital staff member who uses a screen reader, I want to access operationa
 
 **Primary Actor:** Hospital Administrator
 
-Secondary Actors: None identified for the initial version of this use case.
+**Secondary Actors:** None identified for the initial version of this use case.
 
 ### Preconditions
 
@@ -79,11 +98,11 @@ Secondary Actors: None identified for the initial version of this use case.
 
 ### Alternate Flow: Department-Specific Forecast
 
-1. Administrator selects a specific hospital department instead of the entire hospital.
+1. Administrator requests a forecast for a specific hospital department instead of the entire hospital.
 2. System retrieves historical operational data for the selected department.
 3. System validates the department's data.
 4. System generates admission and bed occupancy predictions for the next seven days.
-5. System displays the department-specific forecast with the forecast dates.
+5. System displays the department-specific forecast with the forecast dates and generation time.
 6. Administrator reviews the results.
 
 ### Exception Flow: Missing or Invalid Data
@@ -98,11 +117,13 @@ Secondary Actors: None identified for the initial version of this use case.
 ### Postconditions
 
 **Successful Outcome:**
+
 - A seven-day forecast is generated.
 - Predicted hospital admissions and bed occupancy are displayed.
 - The authorized administrator can review the results for resource planning.
 
 **Unsuccessful Outcome:**
+
 - No forecast is generated using invalid or insufficient data.
 - The system displays an error explaining the data problem.
 - The administrator is informed that the data must be corrected before trying again.
@@ -143,70 +164,132 @@ The following acceptance criteria correspond to UC-01. Each criterion describes 
 
 INVEST is used to evaluate whether each user story is suitable for development and testing.
 
-The six INVEST criteria are:
+The six INVEST criteria are explained below.
 
-- **Independent:** The story describes a distinct stakeholder need.
-- **Negotiable:** The story describes a goal rather than requiring a specific design or implementation.
-- **Valuable:** The story provides a clear benefit to the stakeholder.
-- **Estimable:** The development team can understand the work well enough to estimate it.
-- **Small:** The story focuses on one main goal and can be completed as a manageable piece of work.
-- **Testable:** The story has an outcome that can be checked.
+**Independent:** The story describes a distinct stakeholder need.
 
-### INVEST Evaluation
+**Negotiable:** The story describes a goal rather than requiring a specific design or implementation.
 
-| Story | Independent | Negotiable | Valuable | Estimable | Small | Testable |
-|---|---|---|---|---|---|---|
-| US-01 | Yes | Yes | Yes | Yes | Yes | Yes |
-| US-02 | Yes | Yes | Yes | Yes | Yes | Yes |
-| US-03 | Yes | Yes | Yes | Yes | Yes | Yes |
-| US-04 | Yes | Yes | Yes | Yes | Yes | Yes |
-| US-05 | Yes | Yes | Yes | Yes | Yes | Yes |
+**Valuable:** The story provides a clear benefit to the stakeholder.
 
-### INVEST Review
+**Estimable:** The development team can understand the work well enough to estimate it.
 
-**Independent:** Each story represents a different stakeholder need, such as forecasting demand, monitoring beds, estimating staffing, providing data, or accessing information.
+**Small:** The story focuses on one main goal and can be completed as a manageable piece of work.
 
-**Negotiable:** The stories describe what stakeholders need rather than prescribing specific screens, buttons, or other design choices.
+**Testable:** The story has an outcome that can be checked.
 
-**Valuable:** Each story explains how CareFlow can help the stakeholder complete their work or make better-informed decisions.
+### US-01: Forecast Hospital Demand
 
-**Estimable:** Each story has a defined goal that the team can understand and use to plan development tasks.
+- **Independent:** Yes. It addresses the administrator's need to predict hospital demand.
+- **Negotiable:** Yes. It describes the desired outcome without requiring a specific design.
+- **Valuable:** Yes. It helps administrators plan hospital resources.
+- **Estimable:** Yes. The forecasting goal is clearly defined.
+- **Small:** Yes. It focuses on generating a seven-day hospital demand forecast.
+- **Testable:** Yes. The system's seven-day predictions can be checked.
 
-**Small:** Each story focuses on one main stakeholder goal rather than combining several unrelated requirements.
+### US-02: Monitor Bed Availability
 
-**Testable:** Each story describes an outcome that can be checked through system testing.
+- **Independent:** Yes. It addresses the bed manager's need to monitor capacity.
+- **Negotiable:** Yes. It does not prescribe a specific interface or implementation.
+- **Valuable:** Yes. It helps identify departments approaching capacity.
+- **Estimable:** Yes. The monitoring goal is clearly defined.
+- **Small:** Yes. It focuses on bed occupancy monitoring.
+- **Testable:** Yes. Current and predicted occupancy information can be checked.
 
-Some stories may use the same underlying data and system services, but each represents a separate stakeholder goal.
+### US-03: Estimate Staffing Requirements
+
+- **Independent:** Yes. It addresses the charge nurse's staffing needs.
+- **Negotiable:** Yes. It describes the goal without requiring a specific design.
+- **Valuable:** Yes. It helps identify possible staffing shortages.
+- **Estimable:** Yes. Comparing staffing requirements with availability is clearly defined.
+- **Small:** Yes. It focuses on identifying staffing gaps.
+- **Testable:** Yes. Estimated and available staffing values can be compared.
+
+### US-04: Provide Operational Data
+
+- **Independent:** Yes. It addresses the data manager's responsibility for operational data.
+- **Negotiable:** Yes. It describes the data management goal without prescribing a particular interface.
+- **Valuable:** Yes. It helps ensure that forecasts use accurate information.
+- **Estimable:** Yes. Uploading and validating operational data are defined tasks.
+- **Small:** Yes. It focuses on providing and validating data.
+- **Testable:** Yes. Data uploads and validation results can be checked.
+
+### US-05: Access Information Using Assistive Technology
+
+- **Independent:** Yes. It addresses the accessibility needs of staff members using screen readers.
+- **Negotiable:** Yes. It describes an accessibility goal without requiring a specific implementation.
+- **Valuable:** Yes. It allows staff members to independently access important information.
+- **Estimable:** Yes. Accessibility requirements can be identified and evaluated.
+- **Small:** Yes. It focuses on accessing operational information.
+- **Testable:** Yes. Screen-reader accessibility can be checked through testing.
+
+### Overall INVEST Review
+
+The five user stories represent different stakeholder needs and provide clear benefits. They avoid prescribing specific user interface designs and describe outcomes that can be evaluated.
+
+Some stories may share underlying data and system services, but each represents a separate stakeholder goal. The team will review the INVEST evaluation again as stakeholder feedback and development work provide more information.
 
 # 6. Requirements Elicitation Plan
 
-The team plans to use multiple requirements elicitation techniques to understand stakeholder needs and make sure CareFlow addresses real hospital operational problems. The goal is to understand how stakeholders currently perform their work, what challenges they face, and what information they need for resource planning.
+The team plans to use multiple requirements elicitation techniques to understand stakeholder needs and make sure CareFlow addresses real hospital operational problems.
 
-The team will use interviews, workflow observation, and an accessibility review.
+The goal is to understand how stakeholders currently perform their work, what challenges they face, and what information they need for resource planning.
+
+The team will use stakeholder interviews, workflow observation, and an accessibility review.
 
 ## 6.1 Stakeholder Interviews
 
 **Method:** Interviews
 
-**Stakeholders:**
-- **Primary:** At least one hospital administrator, bed manager, or charge nurse.
-- **Secondary:** At least one hospital data manager.
-- **Hidden:** At least one staff member who uses a screen reader or an accessibility representative.
+**Stakeholder Categories:**
+
+- **Primary:** Hospital administrators, bed managers, and charge nurses.
+- **Secondary:** Hospital data managers.
+- **Hidden:** Hospital staff members who use screen readers or accessibility representatives.
 
 **Purpose:**
 
-The team plans to conduct short interviews with representatives from each stakeholder category to understand their responsibilities, current workflows, and operational challenges.
+The team plans to conduct short interviews with at least one representative from each stakeholder category. The interviews will focus on responsibilities, current workflows, operational challenges, and information needs.
 
-**Questions may include:**
+### Interview Questions for Primary Stakeholders
 
 1. How do you currently monitor hospital admissions and bed occupancy?
 2. What challenges do you face when planning hospital resources?
-3. How do you identify and communicate possible staffing shortages?
-4. How is hospital operational data collected, checked, and maintained?
-5. What difficulties do you experience when accessing or understanding operational information?
-6. What information is missing or difficult to obtain when making decisions?
+3. How do you identify departments that may be approaching capacity?
+4. How do you identify and communicate possible staffing shortages?
+5. How far ahead do you usually plan for changes in patient demand?
+6. What information would help you make better resource-planning decisions?
+
+### Interview Questions for Secondary Stakeholders
+
+1. How is hospital operational data currently collected and maintained?
+2. What problems occur when preparing data for reports or analysis?
+3. How do you identify missing, incomplete, or incorrect data?
+4. What information is most important when preparing operational data?
+5. What difficulties occur when data comes from different sources or formats?
+
+### Interview Questions for Hidden Stakeholders
+
+1. What difficulties do you experience when accessing digital reports using a screen reader?
+2. Are charts, tables, or other visual information difficult to interpret?
+3. What makes information easier to navigate using assistive technology?
+4. What accessibility barriers should an operational planning platform avoid?
+5. What information should be available in a format that screen readers can interpret?
 
 The interviews will focus on existing workflows and problems rather than asking stakeholders to choose specific software features.
+
+### Recording Interview Findings
+
+For each interview, the team will record:
+
+- Stakeholder role and category.
+- Date of the conversation.
+- Current workflow described by the stakeholder.
+- Problems or difficulties identified.
+- Important information needs.
+- Requirements that may need to be added or changed.
+
+The team will use the responses to review and improve the five user stories.
 
 ## 6.2 Workflow Observation
 
@@ -222,7 +305,7 @@ The interviews will focus on existing workflows and problems rather than asking 
 
 With appropriate permission, the team plans to observe or review documented hospital workflows to understand how operational tasks are currently completed.
 
-The team will focus on:
+The observation will focus on:
 
 - How hospital staff monitor bed availability and occupancy.
 - How changes in patient demand are identified.
@@ -255,7 +338,7 @@ This review will help the team identify accessibility needs that might otherwise
 
 ## 6.4 Recording and Using Stakeholder Feedback
 
-The team plans to record relevant findings from interviews, observations, and the accessibility review in a design notebook or in the repository's `docs/elicitation/` folder.
+The team will organize relevant findings from interviews, observations, and the accessibility review in a design notebook or in the repository's `docs/elicitation/` folder.
 
 The notes will include:
 
@@ -267,7 +350,7 @@ The notes will include:
 
 The team will compare the findings with the five user stories in this document. If stakeholder feedback identifies missing or unclear requirements, the team will revise the stories before moving further into design and development.
 
-**Elicitation Status:** The activities described above are planned activities. Interviews, observations, and accessibility reviews have not yet been completed. The team will update this section with actual findings after gathering stakeholder feedback.
+**Elicitation Status:** Stakeholder interviews, workflow observations, and accessibility reviews will be documented as they are completed. The team will use actual feedback to confirm or revise the requirements.
 
 # 7. Scope and Assumptions
 
@@ -285,8 +368,10 @@ The following points define the intended scope of CareFlow for this project.
 
 # 8. Conclusion
 
-These five user stories identify the needs of CareFlow's primary, secondary, and hidden stakeholders. The use case explains how hospital administrators generate forecasts, including alternate and exception situations. The acceptance criteria provide measurable outcomes that can be checked during testing.
+These five user stories identify the needs of CareFlow's primary, secondary, and hidden stakeholders.
 
-The INVEST review helps evaluate whether the stories are suitable for development. The requirements elicitation plan describes how the team intends to gather stakeholder feedback and improve the requirements.
+The use case explains how hospital administrators generate forecasts, including alternate and exception situations. The acceptance criteria provide observable outcomes that can be checked during testing.
+
+The INVEST review helps evaluate whether the stories are suitable for development. The requirements elicitation plan describes how the team will gather stakeholder feedback through interviews, workflow observation, and accessibility reviews.
 
 Together, these requirements will guide the team's design, development, and testing work in the upcoming weeks.
