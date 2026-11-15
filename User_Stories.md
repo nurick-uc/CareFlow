@@ -90,8 +90,8 @@ As a hospital staff member who uses a screen reader, I want to access operationa
 ### Main Success Flow
 
 1. **Administrator:** Requests a hospital-wide forecast for the next seven days.
-2. **System:** Checks the administrator's permissions and retrieves the required historical operational data.
-3. **Administrator:** Confirms the forecast request after the system verifies that the required data is available and valid.
+2. **System:** Checks the administrator's permissions, retrieves the required historical operational data, validates the data, and confirms that it is ready for forecasting.
+3. **Administrator:** Confirms the forecast request.
 4. **System:** Processes the data, generates predictions for hospital admissions and bed occupancy for the next seven days, and displays the predicted values, forecast dates, and generation time.
 5. **Administrator:** Reviews the predictions to identify possible changes in hospital demand and plan resources.
 
