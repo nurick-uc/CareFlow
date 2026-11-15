@@ -9,7 +9,7 @@ CS5001 / CS5002 Senior Design, University of Cincinnati (2026–2027)
 | Name | Major | Role |
 |---|---|---|
 | Nurik Najmiddinov | Computer Science | Coordinator, Documentation Owner |
-| Vaish Koduri | Computer Science | Lead Developer / Architect, QA / Test Owner |
+| Vaishnavi Koduri | Computer Science | Lead Developer / Architect, QA / Test Owner |
 
 **Advisor:** Dr. Yu Zhao, Department of Computer Science
 
@@ -25,8 +25,11 @@ See [Project-Description.md](Project-Description.md) for details.
 |---|---|
 | [Project-Description.md](Project-Description.md) | Project overview, components, and planned technology |
 | [Team_Contract.md](Team_Contract.md) | Team contract (roles, communication, meetings, decisions, conflict plan) |
-| [Constraints_Essay.md](Constraints_Essay.md) | Assignment 3 design constraints essay |
-| [Bio_Nurik_Najmiddinov.md](Bio_Nurik_Najmiddinov.md) | Professional biography — Nurik Najmiddinov |
+| [Constraints_Essay.md](Constraints_Essay.md) | Assignment 3: design constraints essay |
+| [User_Stories.md](User_Stories.md) | Assignment 4: stakeholders, user stories, use case, acceptance criteria |
+| [Design_Diagrams/](Design_Diagrams/) | Assignment 5: D0 high-level design, block diagram, data-flow diagram (.drawio + .png) |
+| [Bio_Nurik_Najmiddinov.md](Bio_Nurik_Najmiddinov.md) | Professional biography: Nurik Najmiddinov |
+| Bio_Vaishnavi_Koduri.md | Professional biography: Vaishnavi Koduri (to be added) |
 
 ## Planned Technology
 
