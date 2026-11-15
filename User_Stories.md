@@ -50,7 +50,7 @@ As a hospital data manager, I want to upload and validate hospital operational d
 
 **Stakeholder Category:** Hidden, Hospital Staff Member Using a Screen Reader
 
-As a hospital staff member who uses a screen reader, I want to access operational reports and forecast information in an accessible format, so that I can independently understand information needed for my work.
+As a hospital staff member who uses a screen reader, I want to access operational reports and forecast information with properly labeled content and accessible navigation, so that I can independently understand and use the same important information available to other staff members.
 
 # 3. Use Cases
 
@@ -60,9 +60,7 @@ As a hospital staff member who uses a screen reader, I want to access operationa
 
 **Primary Actor:** Hospital Administrator
 
-**Secondary Actors:**
-- CareFlow Forecasting System
-- Data Processing Component
+Secondary Actors: None identified for the initial version of this use case.
 
 ### Preconditions
 
@@ -75,16 +73,11 @@ As a hospital staff member who uses a screen reader, I want to access operationa
 ### Main Success Flow
 
 1. **Administrator:** Requests a hospital-wide forecast for the next seven days.
-2. **System:** Checks the administrator's permissions and confirms that the request can proceed.
-3. **Administrator:** Confirms the hospital-wide forecast request.
-4. **System:** Retrieves historical admissions, discharges, and occupancy data.
-5. **Administrator:** Confirms the forecast request after the system indicates that the required data is available.
-6. **System:** Validates and processes the retrieved data.
-7. **Administrator:** Submits the forecast request for processing.
-8. **System:** Generates predictions for hospital admissions and bed occupancy for the next seven days.
-9. **Administrator:** Requests to view the completed forecast.
-10. **System:** Displays the predicted values, forecast dates, and forecast generation time.
-11. **Administrator:** Reviews the predictions to identify possible changes in hospital demand and plan resources.
+2. **System:** Checks the administrator's permissions and retrieves the required historical operational data.
+3. **Administrator:** Confirms the forecast request after the system verifies that the required data is available and valid.
+4. **System:** Processes the data and generates predictions for hospital admissions and bed occupancy for the next seven days.
+5. **System:** Displays the predicted values, forecast dates, and forecast generation time.
+6. **Administrator:** Reviews the predictions to identify possible changes in hospital demand and plan resources.
 
 ### Alternate Flow: Department-Specific Forecast
 
