@@ -1,6 +1,6 @@
 # Team Contract — CareFlow
 
-**Version:** 0.2 (team-signed, pending advisor approval)\
+**Version:** 1.0 (team-signed; approved by advisor Dr. Yu Zhao on 11/10/2026)\
 **Course:** CS5001 Senior Design I, University of Cincinnati\
 **Project:** CareFlow — AI-Powered Hospital Operations and Resource Planning Platform\
 **Advisor:** Dr. Yu Zhao
@@ -75,4 +75,4 @@ By signing, each member agrees to follow this contract for the full two-semester
 | Nurik Najmiddinov | /s/ Nurik Najmiddinov | 11/10/2026 |
 | Vaish Koduri | /s/ Vaish Koduri (approved in writing) | 11/10/2026 |
 
-**Advisor approval:** ______________________ (Dr. Yu Zhao) Date: __________
+**Advisor approval:** Approved and signed by Dr. Yu Zhao, 11/10/2026 (signed PDF submitted on Canvas)
