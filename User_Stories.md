@@ -97,21 +97,17 @@ As a hospital staff member who uses a screen reader, I want to access operationa
 
 ### Alternate Flow: Department-Specific Forecast
 
-1. Administrator requests a forecast for a specific hospital department instead of the entire hospital.
-2. System retrieves historical operational data for the selected department.
-3. System validates the department's data.
-4. System generates admission and bed occupancy predictions for the next seven days.
-5. System displays the department-specific forecast with the forecast dates and generation time.
-6. Administrator reviews the results.
+1. **Administrator:** Requests a forecast for a specific hospital department instead of the entire hospital.
+2. **System:** Retrieves and validates the historical operational data for the selected department, then generates admission and bed occupancy predictions for the next seven days.
+3. **Administrator:** Opens the department-specific forecast.
+4. **System:** Displays the department-specific forecast with the forecast dates and generation time.
+5. **Administrator:** Reviews the results.
 
 ### Exception Flow: Missing or Invalid Data
 
-1. Administrator requests a seven-day hospital demand forecast.
-2. System checks the required historical operational data.
-3. System detects missing required fields or invalid data values.
-4. System stops the forecasting process.
-5. System displays an error identifying the missing or invalid information.
-6. Administrator reviews the error and is informed that the data must be corrected before another forecast can be generated.
+1. **Administrator:** Requests a seven-day hospital demand forecast.
+2. **System:** Checks the required historical operational data, detects missing required fields or invalid data values, stops the forecasting process, and displays an error identifying the missing or invalid information.
+3. **Administrator:** Reviews the error and is informed that the data must be corrected before another forecast can be generated.
 
 ### Postconditions
 
@@ -127,37 +123,108 @@ As a hospital staff member who uses a screen reader, I want to access operationa
 - The system displays an error explaining the data problem.
 - The administrator is informed that the data must be corrected before trying again.
 
+## UC-02: Upload Operational Data
+
+**Related User Story:** US-04, Provide Operational Data
+
+**Primary Actor:** Hospital Data Manager
+
+**Secondary Actors:** Hospital Administrator (receives the refreshed forecast after a successful upload).
+
+### Preconditions
+
+1. The data manager has a registered CareFlow account, is logged in, and has upload permission.
+2. The data manager has a CSV file of daily operational data (date, department, admissions, discharges, occupied beds, bed capacity, staff on shift).
+
+### Main Success Flow
+
+1. **Data Manager:** Selects the CSV file and submits it for upload.
+2. **System:** Checks the file type and size, validates every row, stores the valid rows, and displays a validation report showing the number of rows accepted and rejected.
+3. **Data Manager:** Reviews the validation report and confirms the upload is complete.
+4. **System:** Refreshes the seven-day forecasts using the newly stored data and records the time of the update.
+
+### Alternate Flow: Some Rows Invalid
+
+1. **Data Manager:** Uploads a file in which some rows contain invalid values.
+2. **System:** Stores the valid rows, rejects the invalid rows, and lists each rejected row with its row number, field, and reason.
+3. **Data Manager:** Corrects the rejected rows and uploads them again.
+4. **System:** Validates and stores the corrected rows and updates the validation report.
+
+### Exception Flow: Wrong File Format
+
+1. **Data Manager:** Uploads a file that is not a CSV file or is missing required columns.
+2. **System:** Rejects the whole file, stores no rows, and displays an error naming the problem (for example, the missing column names).
+3. **Data Manager:** Fixes the file and uploads it again.
+
+### Postconditions
+
+**Successful Outcome:**
+
+- Valid rows are stored and available for forecasting.
+- The data manager has a validation report for the upload.
+- Forecasts are refreshed using the new data.
+
+**Unsuccessful Outcome:**
+
+- No rows from a rejected file are stored.
+- Existing data and forecasts remain unchanged.
+- The data manager knows exactly what must be fixed.
+
 # 4. Given, When, and Then Acceptance Criteria
 
-The following acceptance criteria correspond to UC-01. Each criterion describes an outcome that can be checked during testing.
+The following acceptance criteria correspond to UC-01 and UC-02. Each criterion describes an outcome that can be checked during testing, with a number wherever one applies.
 
-## Main Success Flow
+## UC-01: Generate Hospital Demand Forecast
+
+### Main Success Flow
 
 ### AC-01.1: Hospital-Wide Forecast
 
-**Given:** An authorized hospital administrator is logged in, valid historical operational data is available, and a forecasting model is ready.
+**Given:** An authorized hospital administrator is logged in, at least 60 days of valid historical operational data are available, and a forecasting model is ready.
 
 **When:** The administrator requests a hospital-wide forecast for the next seven days.
 
-**Then:** CareFlow generates and displays predicted hospital admissions and bed occupancy for seven consecutive days, including the forecast dates and generation time.
+**Then:** Within 2 minutes, CareFlow displays exactly 7 consecutive daily forecasts starting the day after the request, each showing the date, predicted admissions, and predicted occupied beds, along with the date and time the forecast was generated.
 
 ### AC-01.2: Department-Specific Forecast
 
-**Given:** The administrator is logged in and valid historical operational data is available for a selected hospital department.
+**Given:** The administrator is logged in and at least 60 days of valid historical operational data are available for a selected hospital department.
 
 **When:** The administrator requests a seven-day forecast for that department.
 
-**Then:** CareFlow displays predicted admissions and bed occupancy for the selected department for seven consecutive days, including the forecast dates.
+**Then:** Within 2 minutes, CareFlow displays exactly 7 consecutive daily forecasts for the selected department only, each showing the date, predicted admissions, and predicted occupied beds, along with the generation time.
 
-## Exception Flow
+### Exception Flow
 
 ### AC-01.3: Missing or Invalid Data
 
-**Given:** The uploaded historical operational data is missing required fields or contains invalid values.
+**Given:** The uploaded historical operational data is missing required fields or contains invalid values (for example, negative admissions or occupied beds greater than bed capacity).
 
 **When:** The administrator requests a hospital demand forecast.
 
-**Then:** CareFlow does not generate a forecast and displays an error identifying the missing or invalid information that must be corrected.
+**Then:** Within 5 seconds, CareFlow displays an error that names each missing field or invalid value, no new forecast is saved, and the previously displayed forecast (if any) remains unchanged.
+
+## UC-02: Upload Operational Data
+
+### Main Success Flow
+
+### AC-02.1: Valid File Upload
+
+**Given:** A logged-in data manager has a valid CSV file containing up to 365 days of operational data for at least one department.
+
+**When:** The data manager uploads the file.
+
+**Then:** Within 30 seconds, CareFlow displays a validation report showing the number of rows accepted and the number rejected (0 for a fully valid file), and refreshed forecasts are available within 2 minutes of the upload.
+
+### Exception Flow
+
+### AC-02.2: Missing Required Columns
+
+**Given:** A logged-in data manager has a CSV file that is missing one or more required columns.
+
+**When:** The data manager uploads the file.
+
+**Then:** Within 5 seconds, CareFlow rejects the file, stores 0 rows from it, and displays an error listing the name of every missing column.
 
 # 5. INVEST Self-Check
 
@@ -369,7 +436,7 @@ The following points define the intended scope of CareFlow for this project.
 
 These five user stories identify the needs of CareFlow's primary, secondary, and hidden stakeholders.
 
-The use case explains how hospital administrators generate forecasts, including alternate and exception situations. The acceptance criteria provide observable outcomes that can be checked during testing.
+The two use cases explain how hospital administrators generate forecasts and how hospital data managers provide operational data, including alternate and exception situations. The acceptance criteria provide measurable outcomes, with time limits and counts, that can be checked during testing.
 
 The INVEST review helps evaluate whether the stories are suitable for development. The requirements elicitation plan describes how the team will gather stakeholder feedback through interviews, workflow observation, and accessibility reviews.
 
