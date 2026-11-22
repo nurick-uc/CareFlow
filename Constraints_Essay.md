@@ -1,6 +1,6 @@
 # Constraints Essay — CareFlow: AI-Powered Hospital Operations and Resource Planning Platform
 
-**Team members:** Nurik Najmiddinov, Vaish Koduri\
+**Team members:** Nurik Najmiddinov, Vaishnavi Koduri, Gunnar Heiert\
 **Course:** CS5001 Senior Design, University of Cincinnati\
 **Advisor:** Dr. Yu Zhao
 

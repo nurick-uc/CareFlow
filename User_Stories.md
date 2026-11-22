@@ -4,6 +4,7 @@
 **Team Members:**
 - Vaishnavi Koduri
 - Nurik Najmiddinov
+- Gunnar Heiert
 
 # 1. Stakeholder Map
 
