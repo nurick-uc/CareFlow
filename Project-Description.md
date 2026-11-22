@@ -1,8 +1,18 @@
 # Project Description — CareFlow
 
-**Team:** Nurik Najmiddinov, Vaish Koduri\
-**Advisor:** Dr. Yu Zhao\
-**Course:** CS5001 Senior Design I, University of Cincinnati
+**Team name:** CareFlow\
+**Project topic area:** Healthcare operations software: AI-powered forecasting of hospital admissions, bed occupancy, and staffing needs for resource planning\
+**Advisor:** Dr. Yu Zhao, Department of Computer Science, zhao3y3@ucmail.uc.edu\
+**Course:** CS5001 Senior Design I, University of Cincinnati\
+**Repository:** https://github.com/nurick-uc/CareFlow
+
+## Team Members
+
+| Name | Major | Email |
+|---|---|---|
+| Nurik Najmiddinov | Computer Science | najmidnn@mail.uc.edu |
+| Vaishnavi Koduri | Computer Science | kodurivi@mail.uc.edu |
+| Gunnar Heiert | Computer Science | heiertgr@mail.uc.edu |
 
 ## Problem
 

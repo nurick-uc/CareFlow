@@ -10,6 +10,7 @@ CS5001 / CS5002 Senior Design, University of Cincinnati (2026–2027)
 |---|---|---|
 | Nurik Najmiddinov | Computer Science | Coordinator, Documentation Owner |
 | Vaishnavi Koduri | Computer Science | Lead Developer / Architect, QA / Test Owner |
+| Gunnar Heiert | Computer Science | TBD |
 
 **Advisor:** Dr. Yu Zhao, Department of Computer Science
 
@@ -30,6 +31,7 @@ See [Project-Description.md](Project-Description.md) for details.
 | [Design_Diagrams/](Design_Diagrams/) | Assignment 5: D0 high-level design, block diagram, data-flow diagram (.drawio + .png) |
 | [Bio_Nurik_Najmiddinov.md](Bio_Nurik_Najmiddinov.md) | Professional biography: Nurik Najmiddinov |
 | Bio_Vaishnavi_Koduri.md | Professional biography: Vaishnavi Koduri (to be added) |
+| Bio_Gunnar_Heiert.md | Professional biography: Gunnar Heiert (to be added) |
 
 ## Planned Technology
 
