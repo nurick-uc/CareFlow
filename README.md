@@ -30,7 +30,7 @@ See [Project-Description.md](Project-Description.md) for details.
 | [User_Stories.md](User_Stories.md) | Assignment 4: stakeholders, user stories, use case, acceptance criteria |
 | [Design_Diagrams/](Design_Diagrams/) | Assignment 5: D0 high-level design, block diagram, data-flow diagram (.drawio + .png) |
 | [Bio_Nurik_Najmiddinov.md](Bio_Nurik_Najmiddinov.md) | Professional biography: Nurik Najmiddinov |
-| Bio_Vaishnavi_Koduri.md | Professional biography: Vaishnavi Koduri (to be added) |
+| [Bio_Vaish_Koduri.md](Bio_Vaish_Koduri.md) | Professional biography: Vaishnavi Koduri |
 | Bio_Gunnar_Heiert.md | Professional biography: Gunnar Heiert (to be added) |
 
 ## Planned Technology
