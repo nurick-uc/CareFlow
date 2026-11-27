@@ -919,17 +919,6 @@ All three listed CareFlow team members confirmed that they were comfortable with
 
 ### 11.2 Advisor Review
 
-**Advisor:** Dr. Yu Zhao
-
-| Review Topic | Advisor Feedback | Change Made | Affected Requirement or Design IDs |
-|---|---|---|---|
-| Requirements and priorities | Pending actual advisor review. | No advisor-requested change recorded. | Pending |
-| Architecture and interfaces | Pending actual advisor review. | No advisor-requested change recorded. | Pending |
-| Role-based access | Pending actual advisor review. | No advisor-requested change recorded. | Pending |
-| Testing and traceability | Pending actual advisor review. | No advisor-requested change recorded. | Pending |
-| Deployment and constraints | Pending actual advisor review. | No advisor-requested change recorded. | Pending |
-
-No advisor meeting, feedback, or approval is claimed in this document. The record will be updated if an advisor review takes place.
 
 ## 12. Conclusion
 
@@ -941,4 +930,4 @@ The team has approved the documented technical decisions as the working project 
 
 ---
 
-**End of Technical Specification**
+
