@@ -1,0 +1,16 @@
+ID,Statement,Owner,Start,Planned finish,Task buffer,Completion,Dependencies,Critical path,Milestone
+T1,"Develop the C5 Operations Database schema, migrations, and seed accounts from the D1 ERD (7 entities, UUID run_id).",Nurik,2027-01-11,2027-01-19,2027-01-20 to 2027-01-20,2027-01-20,-,yes,MS-A
+T2,"Develop the C3 Auth Module: password hashing, 60-minute JWT issue and verification (I3), user lookup over I13, and role checks for the four roles.",Gunnar,2027-01-25,2027-02-01,2027-02-02 to 2027-02-02,2027-02-02,T1 T3,,MS-B
+T3,"Develop the C2 Backend API skeleton, the OpenAPI contract for I2, and the database access layer for I7.",Vaish,2027-01-11,2027-01-19,2027-01-20 to 2027-01-20,2027-01-20,-,,MS-A
+T4,"Develop the C4 Data Ingestion upload path: header and row validation, transactional import into C5 (I5, I6), and the rejected-row validation report.",Nurik,2027-02-08,2027-02-15,2027-02-16 to 2027-02-16,2027-02-16,T1 T3,yes,MS-C
+T5,"Develop the C1 Web Dashboard shell: sign-in page, navigation, department filter, and current-operations views over I1 and I2.",Vaish,2027-01-25,2027-02-01,2027-02-02 to 2027-02-02,2027-02-02,T3,,MS-B
+T6,Obtain and validate the Python-generated synthetic dataset for the three departments and build the feature set used by the C6 Forecasting Service.,Nurik,2027-02-22,2027-03-01,2027-03-02 to 2027-03-02,2027-03-02,T4,yes,MS-D
+T7,"Develop the C6 Forecasting Service: 7-day admission and bed occupancy models, the baseline, and the ForecastRun states QUEUED, RUNNING, SUCCESS, FAILED (I8, I10, I11).",Nurik,2027-03-08,2027-03-22,2027-03-23 to 2027-03-23,2027-03-23,T6,yes,MS-E
+T8,"Develop the C7 Planning & Alerts rules that compare forecasts with capacity settings and staffing ratios and write flags to C5 (I9, I12).",Gunnar,2027-02-22,2027-03-01,2027-03-02 to 2027-03-02,2027-03-02,T1 T3,,MS-D
+T9,"Develop the C1 Web Dashboard forecast, alert, and upload pages with Plotly charts, the 90% threshold line, and data-table alternatives.",Vaish,2027-03-08,2027-03-22,2027-03-23 to 2027-03-23,2027-03-23,T4 T5 T8,,MS-E
+T10,"Develop the deployment pipeline: Docker images for C1, C2, and C6, GitHub Actions CI, and an Azure staging environment.",Gunnar,2027-02-08,2027-02-15,2027-02-16 to 2027-02-16,2027-02-16,T3,,MS-C
+T11,"Test the integrated system: integration tests for I1 to I13, role-access tests, and timing tests for the 3 s, 2 min, and 30 s budgets.",Gunnar,2027-03-29,2027-04-05,2027-04-06 to 2027-04-06,2027-04-06,T7 T9 T10,yes,MS-F
+T12,"Validate and refine the C6 Forecasting Service models against the baseline using MAE, RMSE, WAPE, and forecast bias.",Nurik,2027-03-29,2027-04-05,2027-04-06 to 2027-04-06,2027-04-06,T7,,MS-F
+T13,"Document the user guide, deployment guide, and final design report, and update README.md and Design_Diagrams to match the built system.",Gunnar,2027-04-12,2027-04-19,2027-04-20 to 2027-04-20,2027-04-20,T11 T12,yes,MS-G
+T14,Refine C1 and C2 by fixing defects found in T11 and applying accessibility and usability fixes before release v1.0.,Vaish,2027-04-12,2027-04-19,2027-04-20 to 2027-04-20,2027-04-20,T11,,MS-G
+T15,"Develop the C1 Web Dashboard settings and administration pages: capacity thresholds, staffing ratios, and user role management for the admin role.",Vaish,2027-02-22,2027-03-01,2027-03-02 to 2027-03-02,2027-03-02,T3 T5,,MS-D
