@@ -317,24 +317,3 @@ All three listed CareFlow team members confirmed that they were comfortable with
 
 ### 10.2 Advisor Review
 
-| Advisor | Review Date | Feedback | Status |
-|---|---|---|---|
-| Dr. Yu Zhao | Pending | To be recorded after an actual advisor review. | Pending |
-
-### 10.3 Review Questions
-
-The following topics are available for advisor discussion:
-
-1. Are the Must/Should priorities appropriate for the remaining project timeline?
-2. Are the four application roles and their permissions appropriate?
-3. Are the 60-day forecast-history requirement and 90% capacity threshold appropriate?
-4. Are the performance targets realistic for the selected Azure environment?
-5. Are the upload-validation and duplicate-record rules sufficiently clear?
-6. Does every requirement have a design component and a planned verification method?
-7. Are the proposed test cases sufficient to verify D0, D1, and D2?
-
-
-
----
-
-**End of Requirements Document**
